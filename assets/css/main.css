@@ -1,7 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
 
-/* DEMO-SPECIFIC STYLES */
+/* Typewriter Effect */
 .typewriter {
 	color: #fff;
 	font-family: monospace;
@@ -9,26 +9,25 @@
 	border-right: .1em solid orange; /* The typwriter cursor */
 	white-space: nowrap; /* Keeps the content on a single line */
 	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-	letter-spacing: .05em; /* Adjust as needed */
+	letter-spacing: .01em; /* Adjust as needed */
 	animation:
-	  typing 3s steps(25, end),
-	  blink-caret .25s step-end infinite;
+		typing 3s steps(28, end),
+	  	blink-caret .2s step-end infinite;
 }
-  
+
 /* The typing effect */
 @keyframes typing {
 	from { width: 0 }
-	to { width: 100% }
+	to { width: 80% }
 }
-  
+
 /* The typewriter cursor effect */
 @keyframes blink-caret {
 	from, to { border-color: transparent }
 	50% { border-color: orange }
 }
 
-/* START of Space */
-
+/* Start of astrology effect */
 .large-header {
 	position: relative;
 	width: 100%;
@@ -37,13 +36,13 @@
 	background-size: cover;
 	background-position: center center;
 	z-index: -1;
- }
+}
  
- .demo .large-header {
+.demo .large-header {
 	background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
- }
+}
  
- .main-title {
+.main-title {
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -53,25 +52,24 @@
 	left: 50%;
 	-webkit-transform: translate3d(-50%, -50%, 0);
 	transform: translate3d(-50%, -50%, 0);
- }
+}
  
- .demo .main-title {
+.demo .main-title {
 	text-transform: uppercase;
 	font-size: 4.2em;
 	letter-spacing: 0.1em;
- }
+}
  
- .main-title .thin {
+.main-title .thin {
 	font-weight: 200;
- }
+}
  
- @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 	.demo .main-title {
-	   font-size: 3em;
+		font-size: 3em;
 	}
- } 
-
- /* END of Space */
+}
+/* End of astrology effect */
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -89,11 +87,13 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;}
+	display: block;
+}
 
 body {
 	line-height: 1;
@@ -107,10 +107,10 @@ blockquote, q {
 	quotes: none;
 }
 
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
 
 table {
 	border-collapse: collapse;
@@ -139,122 +139,113 @@ input, select, textarea {
 }
 
 /* Basic */
+@-ms-viewport {
+	width: device-width;
+}
 
-	@-ms-viewport {
-		width: device-width;
-	}
+html {
+	box-sizing: border-box;
+}
 
-	html {
-		box-sizing: border-box;
-	}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
 
-	*, *:before, *:after {
-		box-sizing: inherit;
-	}
+body {
+	background: #2e3842;
+}
 
-	body {
-		background: #2e3842;
-	}
+body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+	-moz-animation: none !important;
+	-webkit-animation: none !important;
+	-ms-animation: none !important;
+	animation: none !important;
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
 
-		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
-			-moz-animation: none !important;
-			-webkit-animation: none !important;
-			-ms-animation: none !important;
-			animation: none !important;
-			-moz-transition: none !important;
-			-webkit-transition: none !important;
-			-ms-transition: none !important;
-			transition: none !important;
-		}
+body, input, select, textarea {
+	color: #fff;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	font-size: 15pt;
+	font-weight: 400;
+	letter-spacing: 0.075em;
+	line-height: 1.65em;
+}
 
+@media screen and (max-width: 1680px) {
 	body, input, select, textarea {
-		color: #fff;
-		font-family: "Open Sans", Helvetica, sans-serif;
-		font-size: 15pt;
-		font-weight: 400;
-		letter-spacing: 0.075em;
+		font-size: 13pt;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	body, input, select, textarea {
+		font-size: 12pt;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	body, input, select, textarea {
+		font-size: 11pt;
+		letter-spacing: 0.0375em;
+	}
+}
+
+a {
+	-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	transition: color 0.2s ease, border-bottom-color 0.2s ease;
+	border-bottom: dotted 1px;
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	border-bottom-color: transparent;
+}
+
+strong, b {
+	color: #fff;
+	font-weight: 600;
+}
+
+em, i {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 2em 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #fff;
+	font-weight: 800;
+	letter-spacing: 0.225em;
+	line-height: 1em;
+	margin: 0 0 1em 0;
+	text-transform: uppercase;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: inherit;
+	text-decoration: none;
+}
+
+h2 {
+	font-size: 1.35em;
+	line-height: 1.75em;
+}
+
+@media screen and (max-width: 736px) {
+	h2 {
+		font-size: 1.1em;
 		line-height: 1.65em;
 	}
-
-		@media screen and (max-width: 1680px) {
-
-			body, input, select, textarea {
-				font-size: 13pt;
-			}
-
-		}
-
-		@media screen and (max-width: 1280px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			body, input, select, textarea {
-				font-size: 11pt;
-				letter-spacing: 0.0375em;
-			}
-
-		}
-
-	a {
-		-moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		-webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		-ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		transition: color 0.2s ease, border-bottom-color 0.2s ease;
-		border-bottom: dotted 1px;
-		color: inherit;
-		text-decoration: none;
-	}
-
-		a:hover {
-			border-bottom-color: transparent;
-		}
-
-	strong, b {
-		color: #fff;
-		font-weight: 600;
-	}
-
-	em, i {
-		font-style: italic;
-	}
-
-	p {
-		margin: 0 0 2em 0;
-	}
-
-	h1, h2, h3, h4, h5, h6 {
-		color: #fff;
-		font-weight: 800;
-		letter-spacing: 0.225em;
-		line-height: 1em;
-		margin: 0 0 1em 0;
-		text-transform: uppercase;
-	}
-
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: inherit;
-			text-decoration: none;
-		}
-
-	h2 {
-		font-size: 1.35em;
-		line-height: 1.75em;
-	}
-
-		@media screen and (max-width: 736px) {
-
-			h2 {
-				font-size: 1.1em;
-				line-height: 1.65em;
-			}
-
-		}
+}
 
 	h3 {
 		font-size: 1.15em;
@@ -3477,7 +3468,7 @@ input, select, textarea {
 			position: absolute;
 			right: 0;
 			top: 0;
-			vertical-align: middle;
+			/*vertical-align: middle;*/
 			width: 7em;
 		}
 
